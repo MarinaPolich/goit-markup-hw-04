@@ -12,6 +12,7 @@
     --logo-color: #000;
     --button-bg-color: #F5F4FA;
     --footer-bg-color: #2F303A;
+    --icon-color: #AFB1B8;
 }
 
 body {
@@ -112,7 +113,9 @@ footer .logo {
 }
 
 .contact .link {
-    display: block;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
     margin-left: 10px;
 
     color: var(--primary-text-color);
@@ -123,9 +126,20 @@ footer .logo {
     text-decoration: none;
 }
 
+.contact .link .icon {
+    display: block;
+    margin-right: 10px;
+
+    fill: var(--primary-text-color);
+}
+
+.contact .link:hover .icon,
+.contact .link:focus .icon {
+    fill: var(--accent-color);
+}
+
 /* main */
 .section {
-    /* text-align: center; */
     padding-top: 94px;
     padding-bottom: 94px;
 }
@@ -146,6 +160,19 @@ footer .logo {
     text-align: center;
 }
 
+.visually-hidden {
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    margin: -1px;
+}
+
 /* footer */
 footer {
     background-color: var(--footer-bg-color);
@@ -155,6 +182,17 @@ footer {
     padding: 60px 0;
 }
 
+.page-footer .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.page-footer .address-page {
+    margin-right: 70px;
+}
+
+/* address */
 .address > .item {
     margin-bottom: 9px;
 }
@@ -172,6 +210,61 @@ footer {
 
 .address > .item:first-child .link {
     color: var(--primary-white-color);
+}
+
+/* social */
+.social-footer .social-title {
+    margin-top: 12px;
+    margin-bottom: 20px;
+
+    color: var(--primary-white-color);
+
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.14;
+    text-transform: uppercase;
+}
+
+.social-footer .social-page {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.social-footer .social-item {
+    padding: 12px;
+    border-radius: 50% 50%;
+
+    background-color: rgba(255, 255, 255, 0.1);
+    
+    cursor: pointer;
+}
+
+.social-footer .social-item:not(:last-child) {
+    margin-right: 10px;
+}
+
+.social-footer .social-item:hover,
+.social-footer .social-item:focus {
+    padding: 12px;
+    border-radius: 50% 50%;
+    background-color: var(--accent-color);
+
+    cursor: pointer;
+}
+
+.social-footer .social-link {
+    display: flex;
+    justify-content: center;
+}
+
+.social-footer .social-icon {
+    fill: var(--primary-white-color);
+}
+
+.social-footer .social-item:hover .social-icon,
+.social-footer .social-item:focus .social-icon {
+    fill: var(--primary-white-color);
 }
 
 .logo > span,
